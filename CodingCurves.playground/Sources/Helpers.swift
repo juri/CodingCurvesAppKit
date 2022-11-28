@@ -2,7 +2,11 @@ import AppKit
 import CoreGraphics
 
 extension CGColor {
-    static let black = CGColor(red: 0, green: 0, blue: 0, alpha: 1)
+    public static let black = CGColor(red: 0, green: 0, blue: 0, alpha: 1)
+}
+
+extension CGRect {
+    public var center: CGPoint { CGPoint(x: self.midX, y: self.midY) }
 }
 
 public func draw(width: CGFloat, height: CGFloat, closure: @escaping (CGContext, CGRect) -> Void) -> NSImage {
